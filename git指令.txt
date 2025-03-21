@@ -75,7 +75,7 @@ git reset --hard 96c12c
 git reset --hard HEAD~2
 
 18.加上雲端倉庫
-
+git remote add origin https://github.com/ananbbnn/html_demo
 
 19.檢視雲端連結
 -git remote -v
