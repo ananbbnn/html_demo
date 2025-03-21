@@ -80,3 +80,10 @@ git reset --hard HEAD~2
 19.檢視雲端連結
 -git remote -v
 origin  https://github.com/ananbbnn/html_demo.git (fetch)
+
+
+20.推送到雲端倉庫
+git push -u origin master
+
+21.複製專案
+git colne https://github.com/ananbbnn/html_demo
