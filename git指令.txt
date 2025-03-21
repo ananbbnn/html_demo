@@ -87,3 +87,6 @@ git push -u origin master
 
 21.複製專案
 git colne https://github.com/ananbbnn/html_demo
+
+22.加入站存區的恢復 A->U
+git restore --staged <filename>
