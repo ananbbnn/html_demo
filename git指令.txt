@@ -1,0 +1,82 @@
+1. 檢查版本號
+git --version
+
+git config --global user.name harold
+git config --global user.email ananbbnn@gmail.com
+
+git config --list
+
+3. 初始化倉庫
+git init
+
+4. 檔案狀態
+U = untrack(未追蹤)
+M = modify(修改過的檔案)
+A = add(控管)
+
+5. 加入控管
+git add 1.txt 
+
+6.控管狀態
+git status
+
+7. 檢查物件對應狀態
+git ls-files -s
+
+8.檢視物件內容跟型態
+git cat-file -p d80088
+
+9.控管後的刪除
+- A->D (deleted)
+-git add 3.txt
+-git restore 3.txt
+
+10.將目前暫存區的檔案變動加入倉庫
+git commit -m "完成程式修改"
+git commit ==>vim編輯器
+
+11.檢視目前commit
+git log
+git log --oneline
+
+12.檢視目前分支(預設master)
+git branch
+
+12.5.新增分支
+git branch test
+
+git checkout -b test(新增+切換)
+
+13.切換commit&branch
+git checkout 191623
+git checkout master
+git checkout . (恢復)
+
+14.合併分支
+git checkout master
+git merge test
+git branch -D test
+
+15.合併失敗(衝突)
+
+- 選擇本地分支/其他分支/兩個都保留
+- git add .
+- git commit -m 合併修正完成
+
+git merge -- abort(取消合併)
+
+16.看所有commit紀錄
+git reflog
+
+17.Reset指令
+git reset 96c12c
+git reset --hard 96c12c
+
+git reset --hard HEAD~2
+
+18.加上雲端倉庫
+
+
+19.檢視雲端連結
+-git remote -v
+origin  https://github.com/ananbbnn/html_demo.git (fetch)
