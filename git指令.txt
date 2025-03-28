@@ -90,3 +90,10 @@ git colne https://github.com/ananbbnn/html_demo
 
 22.加入站存區的恢復 A->U
 git restore --staged <filename>
+
+23.同步雲端到本地
+git pull
+
+24. 合併到上一個commit
+git add .
+git commit --amend

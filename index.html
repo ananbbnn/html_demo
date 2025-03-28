@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        h2{
+        .title{
             color: blueviolet;
             background-color: rgb(108, 181, 246);
             font-family:'微軟正規體';
@@ -12,6 +12,33 @@
             /* 1rem=>16px */
             display: inline-block;
             width: 600px;
+            margin: 5px 1px;
+            padding: 20px 0px 0px 50px;
+            border: 2px solid darkslateblue;
+            border-radius: 50px;
+            
+        }
+        .main-title{
+            color: fuchsia;
+            background-color: rgba(255, 240, 76, 0.775);
+            font-family:'微軟正規體';
+            font-size: 3rem;
+            display: inline;
+            margin: 10px 50px;
+            padding: 10px;
+            border-radius: 100%;
+        }
+        #table-bmi{
+            background-color: azure;
+            width: 100%;
+            height: 200px;
+            thead{
+                color: royalblue;
+                background-color: chartreuse;
+            }
+            tbody{
+                color: rgb(3, 3, 113);
+            }
         }
         body{
             background-color: rgb(215, 213, 213);
@@ -27,7 +54,7 @@
     <img width="100%" src="https://img.freepik.com/free-vector/fitness-gym-training-twitch-banner_23-2150681508.jpg?t=st=1742559566~exp=1742563166~hmac=9a8dfeef487474ff6b4939df0d78e3ada43d0812121fa8d78db6867dc2412b45&w=900" alt="">
     </a>
 
-    <h1 style="color: aqua;background-color: rgb(51, 51, 68);">我愛健身網站</h1>
+    <div class="main-title">我愛健身網站</div>
     <h3 style="color: gold;background-color: rgb(108, 181, 246);">何謂健身?</h3>
     <p>健身，英文稱為workout，健身這兩個字拆開來的意思就是健康身體，通過各種運動方式或方法來增強力量、增加肌肉量、柔韌性、耐力，以及提高協調和控制身體各部分的能力來使我們的身體更強健。</p>
     <p>除了塑造好身材，透過健身可以刺激我們身體的肌肉，再搭配飲食的控制，這能大大幫助我們的肌肉量增加，以及讓我們的肌肉更加的結實。</p>
@@ -38,7 +65,7 @@
         www.wondercore.hk
     </a><br>
 
-    <h2 style="color: gold;">健身的10個好處</h2>
+    <div class="title">健身的10個好處</div>
     <ol>
         <li>增加基礎代謝率</li>
         <li>預防疾病和提高免疫力</li>
@@ -52,7 +79,7 @@
         <li>增加肌肉助於減肥</li> 
     </ol>
     <hr>
-    <h2>好文章連結</h2>
+    <div class="title">好文章連結</div>
     <h3>健身初學者必看！10個常見的健身迷思</h3>
     <li><a target="_blank" href="https://www.peeta.tw/weight-loss/intermittent-fasting/">
         間歇性斷食法完整攻略
@@ -62,8 +89,8 @@
     </a></li>
 
     <hr>
-    <h2>一天所需卡路里</h2>
-    <table border="1">
+    <div class="title">一天所需卡路里</div>
+    <table id="table-bmi" border="1">
         <thead>
             <tr>
                 <th>每天活動量</th>
@@ -94,7 +121,7 @@
         </tbody>
         
     </table>
-    <h2>舉例</h2>
+    <div class="title">舉例</div>
     <ol>
         <li>
             <a target="_blank" href="bmi.html"><b>計算BMI:</b></a>&nbsp;
@@ -106,7 +133,7 @@
         </li>
     </ol>
     <hr>
-    <h2>健身圖片</h2>
+    <div class="title">健身圖片</div>
     <table>
         <tbody>
             <tr>
@@ -117,7 +144,7 @@
         </tbody>
     </table>
     <hr>
-    <h2>健身影片</h2>
+    <div class="title">健身影片</div><br>
     <!-- <video controls src="videos/SampleVideo_720x480_5mb.mp4"></video> -->
     <iframe width="49%" height="240" src="https://www.youtube.com/embed/npv-UM9M474" title="15 分鐘簡單居家全身徒手訓練 【初級版】 15 Min Easy Full Body No Equipment workout｜初學者運動｜簡單易學需器材｜ 養成運動習慣｜男女適合的訓練【健身運動】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <iframe width="49%" height="240" src="https://www.youtube.com/embed/NfIe2WmQD5E" title="30分鐘燃脂居家運動！｜針對核心、有氧、臀腿超爆汗間歇有氧" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
