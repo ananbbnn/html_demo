@@ -51,7 +51,7 @@
             }
         @media screen and (max-width:600px){
             form{
-                width: 120%;
+                width: 80%;
             }
         }
     </style>
@@ -97,6 +97,62 @@
 
     </form>
     <a href="index.html">首頁</a>
+
+<script>
+    let x = 10;
+    let y = 20;
+    let z = x + y;
+
+    if(x>10){
+
+    }else if(y>20){
+
+    }else{
+        console.log(x,y,z);
+    }
+
+    x = "10";
+    y = 10;
+
+    console.log(x === y);
+
+    let height = prompt("請輸入身高:");
+    let weight = prompt("請輸入體重:");
+    let bmi = getBmi(height,weight);
+
+    alert("BMI:"+bmi)
+    
+
+    function getBmi(height,weight){
+        const bmi = weight/(height/100)**2;
+        
+        return bmi.toFixed(2);
+    }
+    
+
+    // const pi = 3.1415926;
+    // // const 宣告常數
+    // let radius = prompt("請輸入半徑:");
+    // if (isNaN(radius)){
+    //     alert("請輸入正確數值!");
+        
+    // }else{
+    //     let area =radius*radius*pi;
+    //     const result = "半徑為:"+radius+" 面積為:"+area;
+    //     console.log(isNaN(result));
+    //     document.write("<h2>"+result+"</h2>")
+    //     alert(result);
+    // }
+    
+
+    
+    
+    
+
+
+
+
+</script>
     
 </body>
 </html>
