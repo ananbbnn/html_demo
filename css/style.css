@@ -1,0 +1,32 @@
+/* 共用css區 */
+body{
+    text-align: center;
+    background-color: rgb(215, 213, 213);
+    font-family: 'Times New Roman', Times, serif;
+}
+.title{
+    color: blueviolet;
+    background-color: rgb(108, 181, 246);
+    font-family:'微軟正規體';
+    font-size: 2rem;
+    /* 1rem=>16px */
+    display: inline-block;
+    width: 600px;
+    margin: 5px 1px;
+    padding: 20px 0px 0px 50px;
+    border: 2px solid darkslateblue;
+    border-radius: 50px;
+    
+}
+.main-title{
+    
+    color: fuchsia;
+    background-color: rgba(255, 240, 76, 0.775);
+    font-family:'微軟正規體';
+    font-size: 3rem;
+    margin: 10px 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 100%;
+    
+}
