@@ -26,14 +26,13 @@
             border: 2px solid darkslateblue;
             border-radius: 50px;
             box-shadow: 10px 10px 5px darkblue;
-            input{
-                margin: 6px 0px;
-                font-size: 20px;
-            }
-            label{
-                font-size: 20px;
-            }
-
+        }
+        from input{
+            margin: 6px 0px;
+            font-size: 20px;
+        }
+        from label{
+            font-size: 20px;
         }
         .panel1{
             background-color: rgb(113, 234, 255);
@@ -88,7 +87,7 @@
             </select>
 
         </div>   
-            <button type="submit">計算</button>
+            <button id="btn" type="button">計算</button>
         
 
 
@@ -99,35 +98,65 @@
     <a href="index.html">首頁</a>
 
 <script>
-    let x = 10;
-    let y = 20;
-    let z = x + y;
-
-    if(x>10){
-
-    }else if(y>20){
-
-    }else{
-        console.log(x,y,z);
-    }
-
-    x = "10";
-    y = 10;
-
-    console.log(x === y);
-
-    let height = prompt("請輸入身高:");
-    let weight = prompt("請輸入體重:");
-    let bmi = getBmi(height,weight);
-
-    alert("BMI:"+bmi)
-    
-
     function getBmi(height,weight){
         const bmi = weight/(height/100)**2;
-        
         return bmi.toFixed(2);
     }
+    function countBmi(){
+        let h = document.getElementById("height").value;
+        let w = document.getElementById("weight").value;
+        alert("BMI:"+getBmi(h,w));
+    }
+    
+
+    let btn = document.querySelector("#btn");
+    btn.addEventListener('click',countBmi);
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let x = 10;
+    // let y = 20;
+    // let z = x + y;
+
+    // if(x>10){
+
+    // }else if(y>20){
+
+    // }else{
+    //     console.log(x,y,z);
+    // }
+
+    // x = "10";
+    // y = 10;
+
+    // console.log(x === y);
+
+    // let height = prompt("請輸入身高:");
+    // let weight = prompt("請輸入體重:");
+    // let bmi = getBmi(height,weight);
+
+    // alert("BMI:"+bmi)
+    
+
+    // function getBmi(height,weight){
+    //     const bmi = weight/(height/100)**2;
+        
+    //     return bmi.toFixed(2);
+    // }
     
 
     // const pi = 3.1415926;
