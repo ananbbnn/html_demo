@@ -84,9 +84,8 @@
 <body>
     <div class="main-title">BMI計算機</div>
 
-    <div id="record">
-
-    </div>
+    <div id="record"></div>
+    <button style="background-color: red;" hidden="true" id="clear" type="button">刪除</button>
 
     <form action="">
         <label for="username">姓名</label>
@@ -148,10 +147,25 @@
     
 
 <script>
+    const clearRecordBtn = document.querySelector("#clear")
+
+    clearRecordBtn.addEventListener("click",function(){
+        localStorage.removeItem("record");
+        window.location.href = "";
+    })
+
     let data = {
         total:0,
         count:0
     }
+    
+    record = JSON.parse(localStorage.getItem("record"));
+    if(record){
+        data = record;
+        let avg = (data.total/data.count).toFixed(2)
+        document.querySelector("#record").innerHTML = `紀錄人數:${data.count} 平均BMI:${avg}`
+    }
+    console.log(record);
     
 
     function getBmi(height,weight){
@@ -165,6 +179,7 @@
             alert("請輸入正確數值")
         }else{
             document.querySelector("#result").hidden = false;
+            document.querySelector("#clear").hidden = false;
             let bmi = getBmi(h,w);
             console.log(bmi,getComment(bmi));
             
@@ -188,6 +203,8 @@
             data.count += 1;
             let avg = (data.total/data.count).toFixed(2)
             document.querySelector("#record").innerHTML = `紀錄人數:${data.count} 平均BMI:${avg}`
+
+            localStorage.setItem("record",JSON.stringify(data));
             
             
 
