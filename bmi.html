@@ -64,6 +64,17 @@
             text-align: center;
             font-family: 'Times New Roman', Times, serif;
         }
+        #tableRecord table{
+            background-color: azure;
+            width: 75%;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #tableRecord thead{
+            background-color: crimson;
+        }
         button{
                 padding: 0px 50px;
                 background-color: azure;
@@ -144,10 +155,31 @@
         <p class="comment"></p>
     </div>
 
+    <div id="tableRecord">
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年齡</th>
+                    <th>性別</th>
+                    <th>身高</th>
+                    <th>體重</th>
+                    <th>BMI</th>
+                </tr>
+            </thead>
+        </table>
+
+
+
+
+
+    </div>
+
     
 
 <script>
     const clearRecordBtn = document.querySelector("#clear")
+    
 
     clearRecordBtn.addEventListener("click",function(){
         localStorage.removeItem("record");
@@ -158,7 +190,9 @@
         total:0,
         count:0
     }
-    
+    let datas = JSON.parse(localStorage.getItem("datas")) || [];
+
+
     record = JSON.parse(localStorage.getItem("record"));
     if(record){
         data = record;
@@ -166,6 +200,50 @@
         document.querySelector("#record").innerHTML = `紀錄人數:${data.count} 平均BMI:${avg}`
     }
     console.log(record);
+
+    function addRow(data){
+        return `
+        <tr>
+            <td>${data.name}</td>
+            <td>${data.age}</td>
+            <td>${data.sex}</td>
+            <td>${data.height}</td>
+            <td>${data.weight}</td>
+            <td>${data.bmi}</td>
+        </tr>
+
+        `;
+    }
+
+    function renderTable(datas){
+        tableData = "";
+        for(let i=0;i<datas.length; i++ ){
+            console.log((i+1,datas[i]));
+            tableData += addRow(datas[i]);
+            
+        }
+        let tableHtml = `
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年齡</th>
+                    <th>性別</th>
+                    <th>身高</th>
+                    <th>體重</th>
+                    <th>BMI</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${tableData}
+            </tbody>
+        </table>
+        `;
+
+        console.log(tableHtml);
+        document.querySelector("#tableRecord").innerHTML = tableHtml
+        
+    }
     
 
     function getBmi(height,weight){
@@ -190,6 +268,8 @@
             const age = document.getElementById("age").value;
             const height = document.getElementById("height").value;
             const weight = document.getElementById("weight").value;
+            const sexEl = document.querySelector("input[name='sex']:checked")
+            let sex = sexEl.value;
             bmiResult.innerText = bmi;
             bmiResult.style.color = getComment(bmi)[1];
             document.querySelector(".comment").innerText = getComment(bmi)[0];
@@ -199,12 +279,28 @@
             document.querySelector(".weight").innerText = weight;
             console.log(username,age,height,weight);
 
+
             data.total += Number(bmi);
             data.count += 1;
             let avg = (data.total/data.count).toFixed(2)
             document.querySelector("#record").innerHTML = `紀錄人數:${data.count} 平均BMI:${avg}`
 
             localStorage.setItem("record",JSON.stringify(data));
+
+            let person={
+                name:username,
+                age:age,
+                sex:sex,
+                height:height,
+                weight:weight,
+                bmi:bmi
+            }
+            
+            datas.push(person);
+            renderTable(datas)
+            
+ 
+            
             
             
 
