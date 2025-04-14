@@ -1,0 +1,81 @@
+.main-title{
+    box-shadow: 10px 10px 5px darkgoldenrod;
+}
+a{
+    background-color: crimson;
+    color: white;
+    padding: 6px;
+    border: 2px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+
+}
+form{
+    width: 40%;
+    margin: 24px auto;
+    background-color: aqua;
+    padding: 20px 20px;
+    border: 2px solid darkslateblue;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px darkblue;
+    position: relative;
+}
+form input{
+    margin: 6px 0px;
+    font-size: 20px;
+}
+form label{
+    font-size: 20px;
+}
+.panel1{
+    background-color: rgb(113, 234, 255);
+    font-size: 20px;
+    border: 1.5px solid darkslateblue;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    
+}
+#result{
+    background-color: rgb(56, 244, 206);
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1.5px solid darkslateblue;
+    border-radius: 1px;
+}
+.comment{
+    font-size: 1.5rem;
+}
+#info{
+    background-color: azure;
+    width: 75%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+#tableRecord table{
+    background-color: azure;
+    width: 75%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+#tableRecord thead{
+    background-color: crimson;
+}
+button{
+        padding: 0px 50px;
+        background-color: azure;
+        margin-top: 5px;
+        border-radius: 100%;
+    }
+@media screen and (max-width:600px){
+    form{
+        width: 80%;
+    }
+}
